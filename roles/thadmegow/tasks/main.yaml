@@ -1,0 +1,86 @@
+---
+- name: Copy sendgrid secret
+  copy:
+    content: 'SENDGRID_API_KEY={{ sendgrid_api_key }}'
+    dest: /root/sendgrid
+
+- name: Add EPEL repository
+  yum_repository:
+    name: epel
+    description: EPEL YUM repo
+    baseurl: http://download.fedoraproject.org/pub/epel/7/$basearch
+
+- name: Add nginx repository
+  yum_repository:
+    name: epel
+    description: nginx YUM repo
+    baseurl: https://nginx.org/packages/centos/$releasever/$basearch/
+    gpgcheck: no
+
+- name: install the latest version of nginx, python3, python3-devel, & python3-pip
+  yum:
+    name:
+      - nginx
+      - python3
+      - python3-devel
+      - python3-pip
+    state: latest
+
+- name: Copy requirements.txt
+  copy:
+    src: "{{ role_path }}/requirements.txt"
+    dest: /usr/share/nginx/html/
+
+- name: Install specified python requirements
+  pip:
+    requirements: /usr/share/nginx/html/requirements.txt
+    executable: pip3
+
+- name: Copy nginx config
+  copy:
+    src: "{{ role_path }}/files/nginx/nginx.conf"
+    dest: /etc/nginx/nginx.conf
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Copy thadmegow.net VirtualHost conf
+  copy:
+    src: "{{ role_path }}/files/nginx/default-site.conf"
+    dest: /etc/nginx/conf.d/default.conf
+
+- name: Copy gunicorn (wsgi server) systemd unit
+  copy:
+    src: "{{ role_path }}/files/systemd/gunicorn.service"
+    dest: /etc/systemd/system
+    owner: root
+    mode: 0644
+
+- name: Copy thadmegow.net src
+  copy:
+    src: "{{ role_path }}/files/src/"
+    dest: /usr/share/nginx/html/
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Sprinkle some shitty songs in...
+  copy:
+    src: "{{ role_path }}/files/music/"
+    dest: /usr/share/nginx/html/music
+    owner: root
+    group: root
+    mode: 0644
+
+- name: enable and start gunicorn (wsgi server) service
+  systemd:
+    name: gunicorn
+    enabled: yes
+    state: restarted
+
+- name: enable and start nginx (thadmegow.net) service
+  systemd:
+    name: nginx
+    enabled: yes
+    state: restarted
+

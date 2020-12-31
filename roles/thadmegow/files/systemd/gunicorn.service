@@ -1,0 +1,14 @@
+[Unit]
+Description=gunicorn daemon
+After=network.target
+
+[Service]
+EnvironmentFile=/root/sendgrid
+User=root
+Group=root
+WorkingDirectory=/usr/share/nginx/html/thadmegow
+ExecStart=/usr/local/bin/gunicorn --workers 3 --bind unix:/run/gunicorn.sock thadmegow:app
+ExecStop=/bin/pkill -SIGTERM gunicorn
+
+[Install]
+WantedBy=multi-user.target
