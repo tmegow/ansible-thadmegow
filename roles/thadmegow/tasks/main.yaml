@@ -1,8 +1,10 @@
 ---
-- name: Copy sendgrid secret
+- name: Copy secrets
   copy:
-    content: 'SENDGRID_API_KEY={{ sendgrid_api_key }}'
-    dest: /root/sendgrid
+    content: |
+      SENDGRID_API_KEY={{ sendgrid_api_key }}
+      RECAPTCHA_SECRET={{ recaptcha_secret }}
+    dest: /root/env
 
 - name: Add EPEL repository
   yum_repository:
@@ -77,10 +79,12 @@
     name: gunicorn
     enabled: yes
     state: restarted
+    daemon_reload: yes
 
 - name: enable and start nginx (thadmegow.net) service
   systemd:
     name: nginx
     enabled: yes
     state: restarted
+    daemon_reload: yes
 
