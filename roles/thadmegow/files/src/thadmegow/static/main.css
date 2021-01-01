@@ -2764,7 +2764,7 @@ table.alt tbody tr td {
 /* Wrapper */
 
 .wrapper {
-    padding: 5em 0 3em 0;
+    padding: 5em 0 0em 10em;
     position: relative;
 }
 
@@ -2773,6 +2773,13 @@ table.alt tbody tr td {
     margin-right: auto;
     width: 70em;
     max-width: 100%;
+}
+
+/* Change flex wrapping for this form to align ReCaptcha V2 box */
+.wrapper > .inner div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .wrapper > .skillset {

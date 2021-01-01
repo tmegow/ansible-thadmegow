@@ -3,7 +3,7 @@ Description=gunicorn daemon
 After=network.target
 
 [Service]
-EnvironmentFile=/root/sendgrid
+EnvironmentFile=/root/env
 User=root
 Group=root
 WorkingDirectory=/usr/share/nginx/html/thadmegow
