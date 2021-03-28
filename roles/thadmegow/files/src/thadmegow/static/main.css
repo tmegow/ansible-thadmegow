@@ -3377,10 +3377,10 @@ table.alt tbody tr td {
     min-width: 200px;
 }
 
-@media screen and (max-width: 1366px) {
+@media screen and (max-width: 1680px) {
 
     #banner {
-        padding: 5em 8em 3em;
+        padding: 5em 8em 0;
     }
 
     #banner h2 {
@@ -3394,10 +3394,26 @@ table.alt tbody tr td {
     }
 }
 
+@media screen and (max-width: 1366px) {
+
+    #banner {
+        padding: 5em 8em 0;
+    }
+
+    #banner h2 {
+        font-size: 2em;
+    }
+
+    #banner .image-right {
+        right: 0;
+        margin: -5em 5em 0 0;
+    }
+}
+
 @media screen and (max-width: 980px) {
 
     #banner {
-        padding: 5em 4em 2em;
+        padding: 5em 4em 0;
     }
 
     #banner .image-right {
@@ -3423,14 +3439,14 @@ table.alt tbody tr td {
 
     #banner .image-right {
         right: 1;
-        margin: 0 0 0 0;
+        margin: -5em 0 0 0;
     }
 }
 
 @media screen and (max-width: 480px) {
 
     #banner {
-        padding: 5em 2em 2em;
+        padding: 0em 2em 2em;
     }
 
     #banner .image-right {
