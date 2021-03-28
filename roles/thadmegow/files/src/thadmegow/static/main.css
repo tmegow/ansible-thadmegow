@@ -2129,6 +2129,12 @@ form.alt textarea {
     top: 0.25em;
 }
 
+.image.right {
+    float: right;
+    margin: 0 0 1em 1.5em;
+    top: 0.25em;
+}
+
 .image.fit {
     display: block;
     margin: 0 0 2em 0;
@@ -3355,6 +3361,14 @@ table.alt tbody tr td {
     width: 100%;
 }
 
+#banner .image-right {
+    position: absolute;
+    right: 0;
+    margin: -5em 10em 0 0;
+    width: 12vw;
+    min-width: 10px;
+}
+
 @media screen and (max-width: 1366px) {
 
     #banner {
@@ -3365,12 +3379,27 @@ table.alt tbody tr td {
         font-size: 2em;
     }
 
+    #banner .image-right {
+        position: absolute;
+        right: 0;
+        margin: -5em 10em 0 0;
+        width: 12vw;
+        min-width: 10px;
+    }
 }
 
 @media screen and (max-width: 980px) {
 
     #banner {
         padding: 5em 4em 2em;
+    }
+
+    #banner .image-right {
+        position: absolute;
+        right: 0;
+        margin: -5em 10em 0 0;
+        width: 11vw;
+        min-width: 10px;
     }
 
 }
@@ -3389,12 +3418,27 @@ table.alt tbody tr td {
         font-size: 1.1em;
     }
 
+    #banner .image-right {
+        position: absolute;
+        right: 0;
+        margin: -5em 10em 0 0;
+        width: 10vw;
+        min-width: 10px;
+    }
 }
 
 @media screen and (max-width: 480px) {
 
     #banner {
         padding: 5em 2em 2em;
+    }
+
+    #banner .image-right {
+        position: absolute;
+        right: 1;
+        margin: 0 e 0 0;
+        width: 9vw;
+        min-width: 10px;
     }
 
 }
