@@ -3326,8 +3326,18 @@ table.alt tbody tr td {
     background-image: url("images/overlay.png"), -ms-linear-gradient(45deg, black 0%, black 100%);
     background-image: url("images/overlay.png"), linear-gradient(45deg, black 0%, black 100%);
     background-size: 100px 100px, cover;
+    background-repeat: repeat;
     color: rgba(255, 255, 255, 0.5);
     padding: 5em 10em 4em;
+    display: flex;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    -moz-flex-wrap: wrap-reverse;
+    -webkit-flex-wrap: wrap-reverse;
+    -ms-flex-wrap: wrap-reverse;
+    flex-wrap: wrap-reverse;
+    justify-content: space-between;
 }
 
 
@@ -3362,11 +3372,9 @@ table.alt tbody tr td {
 }
 
 #banner .image-right {
-    position: absolute;
-    right: 0;
-    margin: -5em 10em 0 0;
+    margin: -5em 10em -5em 0;
     width: 12vw;
-    min-width: 10px;
+    min-width: 200px;
 }
 
 @media screen and (max-width: 1366px) {
@@ -3380,11 +3388,9 @@ table.alt tbody tr td {
     }
 
     #banner .image-right {
-        position: absolute;
         right: 0;
-        margin: -5em 10em 0 0;
+        margin: -5em 5em 0 0;
         width: 12vw;
-        min-width: 10px;
     }
 }
 
@@ -3395,11 +3401,8 @@ table.alt tbody tr td {
     }
 
     #banner .image-right {
-        position: absolute;
         right: 0;
-        margin: -5em 10em 0 0;
-        width: 11vw;
-        min-width: 10px;
+        margin: -5em 3em 0 0;
     }
 
 }
@@ -3419,11 +3422,8 @@ table.alt tbody tr td {
     }
 
     #banner .image-right {
-        position: absolute;
-        right: 0;
-        margin: -5em 10em 0 0;
-        width: 10vw;
-        min-width: 10px;
+        right: 1;
+        margin: 0 0 0 0;
     }
 }
 
@@ -3434,11 +3434,8 @@ table.alt tbody tr td {
     }
 
     #banner .image-right {
-        position: absolute;
         right: 1;
-        margin: 0 e 0 0;
-        width: 9vw;
-        min-width: 10px;
+        margin: 0 0 0 0;
     }
 
 }
