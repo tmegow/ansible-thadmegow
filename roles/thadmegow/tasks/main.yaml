@@ -66,13 +66,13 @@
     group: root
     mode: 0644
 
-- name: Sprinkle some shitty songs in...
-  copy:
-    src: "{{ role_path }}/files/music/"
-    dest: /usr/share/nginx/html/music
-    owner: root
-    group: root
-    mode: 0644
+# - name: Sprinkle some shitty songs in...
+#   copy:
+#     src: "{{ role_path }}/files/music/"
+#     dest: /usr/share/nginx/html/music
+#     owner: root
+#     group: root
+#     mode: 0644
 
 - name: enable and start gunicorn (wsgi server) service
   systemd:

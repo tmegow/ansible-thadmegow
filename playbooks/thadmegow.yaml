@@ -1,6 +1,6 @@
 ---
 - hosts:
-  - thadmegow
+  - thadmegow.org
   become: yes
   roles:
     - role: thadmegow

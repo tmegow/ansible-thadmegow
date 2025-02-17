@@ -3372,7 +3372,7 @@ table.alt tbody tr td {
 }
 
 #banner .image-right {
-    margin: -5em 10em -5em 0;
+    margin: -2em 5em 1em 0;
     width: 12vw;
     min-width: 200px;
 }
@@ -3389,7 +3389,7 @@ table.alt tbody tr td {
 
     #banner .image-right {
         right: 0;
-        margin: -5em 5em 0 0;
+        margin: -2em 5em 1em 0;
         width: 12vw;
     }
 }
@@ -3406,7 +3406,7 @@ table.alt tbody tr td {
 
     #banner .image-right {
         right: 0;
-        margin: -5em 5em 0 0;
+        margin: -2em 5em 1em 0;
     }
 }
 
@@ -3418,7 +3418,7 @@ table.alt tbody tr td {
 
     #banner .image-right {
         right: 0;
-        margin: -5em 3em 0 0;
+        margin: -2em 3em 0 0;
     }
 
 }
@@ -3439,7 +3439,7 @@ table.alt tbody tr td {
 
     #banner .image-right {
         right: 1;
-        margin: -5em 0 0 0;
+        margin: -2em 3em 0 0;
     }
 }
 
