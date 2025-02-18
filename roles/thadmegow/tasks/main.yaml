@@ -4,7 +4,7 @@
     content: |
       SENDGRID_API_KEY={{ sendgrid_api_key }}
       RECAPTCHA_SECRET={{ recaptcha_secret }}
-      GOOGLE_APPLICATION_CREDENTIALS=/opt/gcloud_service_account_file
+      GOOGLE_APPLICATION_CREDENTIALS="/opt/gcloud_service_account_file"
     dest: /root/env
 
 - name: Add EPEL repository
