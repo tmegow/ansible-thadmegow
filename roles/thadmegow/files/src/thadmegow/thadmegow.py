@@ -37,9 +37,9 @@ def is_human(captcha_response):
     # project_name = f"projects/215 NE Blvd Home Security"
     # event = Event(site_key="6LcA6hwaAAAAAEEkE37mE5h1FphvYOeif8fj8x3t", token=secret, user_ip_address=request.remote_addr)
     # assessment = Assessment(event=event)
-    project = os.environ.get('RECAPTCHA_PROJECT')
+    # project = os.environ.get('RECAPTCHA_PROJECT')
     secret = os.environ.get('RECAPTCHA_SECRET')
-    return create_assessment(project_id=f"projects/215 NE Blvd Home Security", recaptcha_site_key=secret, token=captcha_response, user_ip_address=request.remote_addr, user_agent=request.headers.get('User-Agent'), recaptcha_action="LOGIN")
+    return create_assessment(project_id=f"projects/215 NE Blvd Home Security", recaptcha_site_key="6LcA6hwaAAAAAEEkE37mE5h1FphvYOeif8fj8x3t", token=captcha_response, user_ip_address=request.remote_addr, user_agent=request.headers.get('User-Agent'), recaptcha_action="LOGIN")
     # rrequest = recaptchaenterprise_v1.CreateAssessmentRequest(parent=project_name, assessment=assessment)
     # return client.create_assessment(request=rrequest)
     # response_text = json.loads(response.text)
@@ -96,7 +96,7 @@ def create_assessment(
     assessment = recaptchaenterprise_v1.Assessment()
     assessment.event = event
 
-    project_name = f"projects/{project_id}"
+    project_name = f"projects/ne-blvd-home-security"
 
     # Build the assessment request.
     request = recaptchaenterprise_v1.CreateAssessmentRequest()
