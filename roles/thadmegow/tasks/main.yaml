@@ -4,6 +4,7 @@
     content: |
       SENDGRID_API_KEY={{ sendgrid_api_key }}
       RECAPTCHA_SECRET={{ recaptcha_secret }}
+      GOOGLE_APPLICATION_CREDENTIALS=/opt/gcloud_service_account_file
     dest: /root/env
 
 - name: Add EPEL repository
@@ -37,6 +38,11 @@
   pip:
     requirements: /usr/share/nginx/html/requirements.txt
     executable: pip3
+
+- name: Copy gcloud service account creds file
+  copy:
+    content: "{{ gcloud_service_account_file }}"
+    dest: /opt/gcloud_service_account_file
 
 - name: Copy nginx config
   copy:
