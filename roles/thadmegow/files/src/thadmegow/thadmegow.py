@@ -31,19 +31,8 @@ def is_human(captcha_response):
     """ Validating recaptcha response from google server
         Returns True captcha test passed for submitted form else returns False.
     """
-    # payload = {'response': captcha_response, 'secret': secret}
-    # response = requests.post(
-    #         "https://recaptchaenterprise.googleapis.com", payload)
-    # project_name = f"projects/215 NE Blvd Home Security"
-    # event = Event(site_key="6LcA6hwaAAAAAEEkE37mE5h1FphvYOeif8fj8x3t", token=secret, user_ip_address=request.remote_addr)
-    # assessment = Assessment(event=event)
-    # project = os.environ.get('RECAPTCHA_PROJECT')
     secret = os.environ.get('RECAPTCHA_SECRET')
     return create_assessment(project_id=f"projects/215 NE Blvd Home Security", recaptcha_site_key="6LcA6hwaAAAAAEEkE37mE5h1FphvYOeif8fj8x3t", token=captcha_response, user_ip_address=request.remote_addr, user_agent=request.headers.get('User-Agent'), recaptcha_action="LOGIN")
-    # rrequest = recaptchaenterprise_v1.CreateAssessmentRequest(parent=project_name, assessment=assessment)
-    # return client.create_assessment(request=rrequest)
-    # response_text = json.loads(response.text)
-    # return response_text['success']
 
 
 @ app.route('/')
